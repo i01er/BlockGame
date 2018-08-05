@@ -9,9 +9,17 @@ iDler
 
 contract Game
 {
+
+	address public Owner;
+	mapping(address => Player) public Players;
+
+	uint public Version;
+	uint public GameEnd;
+
 	struct City
 	{
 		string	city_name;
+		uint	city_num;
 		uint	city_id;
 		uint	city_status;
 	}
@@ -32,10 +40,10 @@ contract Game
 		uint	hero_skill;
 	}
 
-	address public Owner;
-	mapping(address => Player) public Players;
-
-	uint public GameEnd;
+	uint public food;
+	uint public wood;
+	uint public iron;
+	uint public stone;
 
 	function Authorize(address Player)
 	{
